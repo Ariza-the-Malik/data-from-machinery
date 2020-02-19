@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>RSAD Dashboard</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by RSAD" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico')}}">
+    <link rel="icon" href="favicon.ico" type="{{ url_for('static', filename='img/x-icon')}}">
+    <link href="{{ url_for('static', filename='css/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/toggles.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/toggles-light.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/jquery.toast.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+        <nav class="hk-nav hk-nav-light">
+            <a href="javascript:void(0);" id="hk_nav_close" class="hk-nav-close"><span class="feather-icon"><i data-feather="x"></i></span></a>
+            <div class="nicescroll-bar">
+                <div class="navbar-nav-wrap">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#dash_drp">
+                                <span class="feather-icon"><i data-feather="activity"></i></span>
+                                <span class="nav-link-text">Dashboard</span>
+                            </a>
+                            <ul id="dash_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="index.html">CRM</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboard2.html">Project</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboard3.html">Statistics</a>
+                                        </li>
+										<li class="nav-item">
+                                            <a class="nav-link" href="dashboard4.html">Classic</a>
+                                        </li>
+										<li class="nav-item">
+                                            <a class="nav-link" href="dashboard5.html">Analytics</a>
+                                        </li>
+									</ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-with-badge" href="javascript:void(0);" data-toggle="collapse" data-target="#app_drp">
+                                <span class="feather-icon"><i data-feather="package"></i></span>
+                                <span class="nav-link-text">Application</span>
+                                <span class="badge badge-primary badge-pill">4</span>
+                            </a>
+                            <ul id="app_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="chats.html">Chat</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="calendar.html">Calendar</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="email.html">Email</a>
+                                        </li>
+										<li class="nav-item">
+                                            <a class="nav-link" href="file-manager.html">File Manager</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#auth_drp">
+                                <span class="feather-icon"><i data-feather="zap"></i></span>
+                                <span class="nav-link-text">Authentication</span>
+                            </a>
+                            <ul id="auth_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#signup_drp">
+													Sign Up
+												</a>
+                                            <ul id="signup_drp" class="nav flex-column collapse collapse-level-2">
+                                                <li class="nav-item">
+                                                    <ul class="nav flex-column">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="signup.html">Cover</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="signup1.html">Simple</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#signin_drp">
+													Login
+												</a>
+                                            <ul id="signin_drp" class="nav flex-column collapse collapse-level-2">
+                                                <li class="nav-item">
+                                                    <ul class="nav flex-column">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="login.html">Cover</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="login1.html">Simple</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#recover_drp">
+													Recover Password
+												</a>
+                                            <ul id="recover_drp" class="nav flex-column collapse collapse-level-2">
+                                                <li class="nav-item">
+                                                    <ul class="nav flex-column">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="forgot-password.html">Forgot Password</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="reset-password.html">Reset Password</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="lock-screen.html">Lock Screen</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="404.html">Error 404</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="maintenance.html">Maintenance</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#pages_drp">
+                                <span class="feather-icon"><i data-feather="file-text"></i></span>
+                                <span class="nav-link-text">Pages</span>
+                            </a>
+                            <ul id="pages_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="profile.html">Profile</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="invoice.html">Invoice</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="gallery.html">Gallery</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="activity.html">Activity</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="faq.html">Faq</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr class="nav-separator">
+                    <div class="nav-header">
+                        <span>Admin Panel</span>
+                        <span>UI</span>
+                    </div>
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#Components_drp">
+                                <span class="feather-icon"><i data-feather="layout"></i></span>
+                                <span class="nav-link-text">Manage Users</span>
+                            </a>
+                            <ul id="Components_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Admin/ManageUsers">View Users</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="javascript:void(0);" onclick ="manage_user()">Edit Users</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#content_drp">
+                                <span class="feather-icon"><i data-feather="type"></i></span>
+                                <span class="nav-link-text">Manage Area</span>
+                            </a>
+                            <ul id="content_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="typography.html">View Area</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="images.html">Edit Area</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#utilities_drp">
+                                <span class="feather-icon"><i data-feather="anchor"></i></span>
+                                <span class="nav-link-text">Manage CrossRoad</span>
+                            </a>
+                            <ul id="utilities_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="background.html">View CrossRoad</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="border.html">Edit CrossRoad</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#forms_drp">
+                                <span class="feather-icon"><i data-feather="server"></i></span>
+                                <span class="nav-link-text">Manage Videos</span>
+                            </a>
+                            <ul id="forms_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="form-element.html">View Videos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="input-groups.html">Edit Videos</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#tables_drp">
+                                <span class="feather-icon"><i data-feather="list"></i></span>
+                                <span class="nav-link-text">Manage Detection</span>
+                            </a>
+                            <ul id="tables_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="basic-table.html">View Detection</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="data-table.html">Edit Detection</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#charts_drp">
+                                <span class="feather-icon"><i data-feather="pie-chart"></i></span>
+                                <span class="nav-link-text">Manage Notifications</span>
+                            </a>
+                            <ul id="charts_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="line-charts.html">Send Notifications</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="area-charts.html">Edit Notifications</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#maps_drp">
+                                <span class="feather-icon"><i data-feather="map"></i></span>
+                                <span class="nav-link-text">Manage Complain</span>
+                            </a>
+                            <ul id="maps_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="google-map.html">View Complain</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="vector-map.html">Replay Complain</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#maps_drp">
+                                <span class="feather-icon"><i data-feather="map"></i></span>
+                                <span class="nav-link-text">Manage Feedback</span>
+                            </a>
+                            <ul id="maps_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="google-map.html">View Feedback</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="vector-map.html">Replay Feedback</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#maps_drp">
+                                <span class="feather-icon"><i data-feather="map"></i></span>
+                                <span class="nav-link-text">Manage Report</span>
+                            </a>
+                            <ul id="maps_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="google-map.html">View Report</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="vector-map.html">Edit Report</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr class="nav-separator">
+                    <div class="nav-header">
+                        <span>Getting Started</span>
+                        <span>GS</span>
+                    </div>
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="documentation.html" >
+                                <span class="feather-icon"><i data-feather="book"></i></span>
+                                <span class="nav-link-text">Documentation</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-with-badge" href="#">
+                                <span class="feather-icon"><i data-feather="eye"></i></span>
+                                <span class="nav-link-text">Changelog</span>
+                                <span class="badge badge-sm badge-danger badge-pill">v 1.0</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="feather-icon"><i data-feather="headphones"></i></span>
+                                <span class="nav-link-text">Support</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="hk_nav_backdrop" class="hk-nav-backdrop"></div>
+        <!-- /Vertical Nav -->
+</body>
+</html>

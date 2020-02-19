@@ -1,0 +1,28 @@
+{% extends "Admin/index.html" %}
+
+{% block content %}
+
+
+          <div >
+
+              <table class="  table-dark table-bordered table-sm th"   id="dataTable" width="100%" cellspacing="0" >
+                  <thead style="text-align: center;background: #1f292d;font-size: 18px;">
+                    <tr>
+                      <th>Video Name</th>
+                      <th>Crossroad</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+
+              <tbody>
+               {%for row in videoVOList%}
+        <tr>
+            <td>{{row[0]['VideoName']}}</td>
+            <td>{{row[1]['CrossroadName']}}</td>
+            <td><a href="/Admin/deleteVideo?VideoId={{row[0]['VideoId']}}&Videopath={{row[0]['VideoPath']}}{{row[0]['VideoName']}}">Delete</a> </td>
+        </tr>
+        {% endfor %}
+              </tbody>
+            </table>
+          </div>
+{% endblock %}

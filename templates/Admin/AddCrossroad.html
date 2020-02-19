@@ -1,0 +1,69 @@
+{% extends "Admin/index.html" %}
+
+{% block content %}
+
+
+    <div style="margin-left: auto ; margin-right: auto ;margin-top: auto ;margin-bottom:auto ; width:80%;height:50%" >
+
+        {% if crossroadVOList %}
+        <form action="/Admin/updateCrossroad" method="post">
+            </br>
+            <h1 class="display-4 mb-10 text-center text-white">Edit Crossroad</h1></br>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <h5 class="text-white ">  Select Area : </h5>
+                </div>
+                <div class="col-md-4 form-group">
+                    <select class="form-control custom-select custom-select-sm" name="crossroad_areaId">
+                    {%for row in areaVOList%}
+                        <option value="{{row['AreaId']}}">"{{row['AreaName']}}"</option>
+                    {%endfor%}
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                    {%for row in crossroadVOList%}
+                <div class="col-md-3 form-group">
+                    <h5 class="text-white " >  Crossroad Name : </h5>
+                </div>
+                <div class="col-md-4 form-group">
+                    <input type="hidden" name="CrossroadId" value="{{row['CrossroadId']}}">
+                    <input class="form-control" placeholder="Crossroad Name" name="crossroadname" type="text" value="{{row['CrossroadName']}}">
+                </div>
+                    {%endfor%}
+
+            </div>
+            <button style="margin-left:auto;margin-right:auto;" class="btn btn-primary btn-block w-200p" type="submit" >Update</button>
+
+        </form>
+{%else%}
+        <form action="/Admin/insertCrossroad" method="post">
+        </br>
+            <h1 class="display-4 mb-10 text-center text-white">Add Crossroad</h1></br>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <h5 class="text-white " >  Select Area : </h5>
+                </div>
+                <div class="col-md-4 form-group">
+                    <select class=" form-control custom-select custom-select-sm " name="crossroad_areaId">
+                    {%for row in areaVOList%}
+                        <option value="{{row['AreaId']}}">"{{row['AreaName']}}"</option>
+                    {%endfor%}
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 form-group">
+                    <h5 class="text-white " >  Crossroad Name : </h5>
+                </div>
+                <div class="col-md-4 form-group">
+                    <input class="form-control" placeholder="Crossroad Name" name="crossroadname" type="text" >
+                </div>
+
+            </div>
+            <button style="margin-left:auto;margin-right:auto;" class="btn btn-primary btn-block w-200p" type="submit" >Submit</button>
+        </form>
+{%endif%}
+    </div>
+
+{%endblock%}

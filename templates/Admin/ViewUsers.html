@@ -1,0 +1,37 @@
+{% extends "Admin/index.html" %}
+
+{% block content %}
+
+
+          <div >
+
+              <table class="  table-dark table-bordered table-sm th"   id="dataTable" width="100%" cellspacing="0" >
+                  <thead style="text-align: center;background: #1f292d;font-size: 18px;">
+                    <tr>
+                      <th>Police Station Name</th>
+                      <th>Police Station Address</th>
+                      <th>Username</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+
+              <tbody>
+               {%for row in registrationVOList%}
+        <tr>
+            <td>{{row[0]['PolicestationName']}}</td>
+            <td>{{row[0]['PolicestationAddress']}}</td>
+            <td>{{row[0]['Username']}}</td>
+            <td style="text-align: center;"> <a href="/Admin/editUser?RegistrationId={{row[0]['RegistrationId']}}">Edit</a> / <a href="/Admin/deleteUser?RegistrationId={{row[0]['RegistrationId']}}">Delete</a> /
+            {% if row[1]['LoginStatus'] == "active" %}
+                <a href="/Admin/blockUser?RegistrationId={{row[0]['RegistrationId']}}">Block</a>
+            {% elif row[1]['LoginStatus'] == "inactive" %}
+                <a href="/Admin/unblockUser?RegistrationId={{row[0]['RegistrationId']}}">Unblock</a>
+            {% endif %}
+
+            </td>
+        </tr>
+        {% endfor %}
+              </tbody>
+            </table>
+          </div>
+{% endblock %}

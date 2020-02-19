@@ -1,0 +1,28 @@
+
+{% extends "Admin/index.html" %}
+
+{% block content %}
+
+
+          <div class=" table-dark table-bordered table-sm th"  >
+              <table class=" table-dark table-bordered table-sm th"  id="dataTable" width="100%" cellspacing="0" >
+                  <thead style="text-align: center;background: #1f292d;font-size: 18px;">
+                    <tr>
+                      <th>Area Name</th>
+                      <th>Pin Code</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+
+              <tbody>
+               {%for row in areaVOList%}
+        <tr>
+            <td>{{row['AreaName']}}</td>
+            <td>{{row['PinCode']}}</td>
+            <td> <a href="/admin/editArea?AreaId={{row['AreaId']}}">Edit</a> / <a href="/admin/deleteArea?AreaId={{row['AreaId']}}">Delete</a> </td>
+        </tr>
+        {% endfor %}
+              </tbody>
+            </table>
+          </div>
+{% endblock %}

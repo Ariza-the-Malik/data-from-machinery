@@ -1,0 +1,60 @@
+{% extends "Admin/index.html" %}
+
+{% block content %}
+
+
+    <div style="margin-left: auto ; margin-right: auto ;margin-top: auto ;margin-bottom:auto ; width:80%;height:50%" >
+            {% if areaVOList %}
+        <form action="/Admin/updateArea" method="post">
+        </br>
+            <h1 class="display-4 mb-10 text-center text-white">Edit Area</h1></br>
+            {%for row in areaVOList%}
+            <div class="form-row">
+                <div class="col-md-2 form-group">
+                    <h5 class="text-white " >  Area Name : </h5>
+                </div>
+                <div class="col-md-4 form-group">
+                    <input type="hidden" name="AreaId" value="{{row['AreaId']}}">
+                    <input class="form-control" placeholder="Area Name" name="areaname" type="text" value="{{row['AreaName']}}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 form-group">
+                    <h5 class="text-white " >  Pincode : </h5>
+                </div>
+                <div class="col-md-4 form-group">
+                    <input class="form-control" placeholder="Pincode" name="pincode" type="text" value="{{row['PinCode']}}">
+                </div>
+            </div>
+            <button style="margin-left:auto;margin-right:auto;" class="btn btn-primary btn-block w-200p" type="submit" >Update</button>
+            {%endfor%}
+
+
+
+   </form>
+{%else%}
+    <form action="/Admin/insertArea" method="post">
+        </br>
+        <h1 class="display-4 mb-10 text-center text-white">Add Area</h1></br>
+        <div class="form-row">
+            <div class="col-md-2 form-group">
+                <h5 class="text-white " >  Area Name : </h5>
+            </div>
+            <div class="col-md-4 form-group">
+                <input class="form-control" placeholder="Area Name" name="areaname" type="text" >
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-2 form-group">
+                <h5 class="text-white ">  Pincode : </h5>
+            </div>
+            <div class="col-md-4 form-group">
+                <input class="form-control" placeholder="Pincode" name="pincode" type="text" >
+            </div>
+        </div>
+        <button style="margin-left:auto;margin-right:auto;" class="btn btn-primary btn-block w-200p" type="submit" >Submit</button>
+    </form>
+{%endif%}
+</div>
+
+{%endblock%}
